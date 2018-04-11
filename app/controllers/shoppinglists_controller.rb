@@ -21,6 +21,9 @@ class ShoppinglistsController < ApplicationController
   # PUT /shoppinglists/:id
   def update
     @shoppinglist.update(shoppinglist_params)
+    @dish = Dish.find(params[:dish_id])
+
+    @shoppinglist.dishes << @dish
     head :no_content
   end
 
