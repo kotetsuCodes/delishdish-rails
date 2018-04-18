@@ -10,6 +10,7 @@ class ShoppinglistsController < ApplicationController
   # POST /shoppinglists
   def create
     @shoppinglist = Shoppinglist.create!(shoppinglist_params)
+
     json_response(@shoppinglist, :created)
   end
 
@@ -33,7 +34,7 @@ class ShoppinglistsController < ApplicationController
   private
 
   def shoppinglist_params
-    params.permit(:title)
+    params.permit(:title, dish_ids: [])
   end
 
   def set_shoppinglist
