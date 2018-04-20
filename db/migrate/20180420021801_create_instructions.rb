@@ -1,6 +1,6 @@
-class CreateDishinstructions < ActiveRecord::Migration[5.1]
+class CreateInstructions < ActiveRecord::Migration[5.1]
   def change
-    create_table :dishinstructions do |t|
+    create_table :instructions do |t|
       t.integer :order
       t.string :instruction_content
       t.references :dish, foreign_key: true
