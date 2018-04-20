@@ -21,7 +21,7 @@ class DishinstructionsController < ApplicationController
   end
 
   def destroy
-    @dish.dishinstructions.delete(Dishinstruction.find(params[:id]))
+    @dish.dishinstructions.find(params[:id]).delete
     head :no_content
   end
 
