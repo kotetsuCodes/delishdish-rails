@@ -20,7 +20,7 @@ class IngredientsController < ApplicationController
   end
 
   def destroy
-    @dish.ingredients.delete(Ingredient.find(params[:id]))
+    @dish.ingredients.find(params[:id]).delete
 
     head :no_content
   end
