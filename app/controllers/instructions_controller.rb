@@ -1,5 +1,6 @@
 class InstructionsController < ApplicationController
-    before_action :set_dish
+  before_filter :authenticate_user!  
+  before_action :set_dish
   
     def index
       json_response(@dish.instructions)
