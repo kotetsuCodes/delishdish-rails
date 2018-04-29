@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
   protected
   def authenticate_request!
     unless user_id_in_token?
-      render json_response({ errors: ['Not Authenticated at all'] }, :unauthorized)
+      render json: { errors: ['Not Authenticated at all'] }, status: :unauthorized
       return
     end
     @current_user = User.find(auth_token[:user_id])
