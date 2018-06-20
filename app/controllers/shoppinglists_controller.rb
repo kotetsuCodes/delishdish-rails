@@ -1,10 +1,9 @@
 class ShoppinglistsController < ApplicationController
-  before_action :authenticate_request!
   before_action :set_shoppinglist, only: [:show, :update, :destroy]
 
   # GET /shoppinglists
   def index
-    @shoppinglists = current_user.shoppinglists
+    @shoppinglists = current_user.shoppinglists    
     json_response(@shoppinglists)
   end
 

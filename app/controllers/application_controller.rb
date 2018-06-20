@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  before_action :authenticate_request!
   include Response
   include ExceptionHandler
   attr_reader :current_user

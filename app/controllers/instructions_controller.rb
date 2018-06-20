@@ -1,5 +1,4 @@
 class InstructionsController < ApplicationController
-  before_filter :authenticate_user!  
   before_action :set_dish
   
     def index

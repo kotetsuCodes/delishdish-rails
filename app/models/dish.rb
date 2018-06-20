@@ -6,4 +6,5 @@ class Dish < ApplicationRecord
   has_many :instructions, dependent: :destroy
 
   validates_presence_of :title
+  accepts_nested_attributes_for :instructions, :ingredients
 end
