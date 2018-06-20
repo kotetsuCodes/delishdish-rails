@@ -1,5 +1,5 @@
 class InstructionsController < ApplicationController
-    before_action :set_dish
+  before_action :set_dish
   
     def index
       json_response(@dish.instructions)

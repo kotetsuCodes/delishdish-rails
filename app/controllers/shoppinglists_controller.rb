@@ -3,13 +3,15 @@ class ShoppinglistsController < ApplicationController
 
   # GET /shoppinglists
   def index
-    @shoppinglists = Shoppinglist.all
+    @shoppinglists = current_user.shoppinglists    
     json_response(@shoppinglists)
   end
 
   # POST /shoppinglists
   def create
+
     @shoppinglist = Shoppinglist.create!(shoppinglist_params)
+    current_user.shoppinglists << @shoppinglist
 
     json_response(@shoppinglist, :created)
   end
